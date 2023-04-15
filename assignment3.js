@@ -5,27 +5,73 @@
     const genre = document.getElementById("genreId");
     const year = document.getElementById("yearId");
     const languages = document.getElementById("languagesId");
-    const ratings = document.getElementById("ratingsId");
-
-    // filter movies based on user preferences
-const recommendedMovies = data.filter(movie => {
-    return movie.genre === userPreferences.genre && 
-           movie.rating >= userPreferences.rating &&
-           movie.releaseYear === userPreferences.releaseYear;
-  });
-  
-  // display recommended movies
-  recommendedMovies.forEach(movie => {
-    console.log(movie.title);
-  });
+    // const ratings = document.getElementById("ratingsId");
 
 
 
+    const btn = document.getElementById("searchBtn")
+
+    
+    function search(){
+        const genreValue = genre.value;
+        const yearValue = year.value;
+        const languagesValue = languages.value;
+
+        
+        // const ratingsValue = ratings.value;
+
+        // const result = data.filter(function(userValue) {  
+        //     if (typeof userValue.genres === 'string') {    //|| typeof userValue.original_language
+        //       if (userValue.genres.toLowerCase().includes(genreValue.toLowerCase()) && userValue.release_date.includes(yearValue)
+        //       && userValue.original_language.toLowerCase().includes(languagesValue.toLowerCase())){
+        //         return true;
+        //       }
+        //     }
+        //     return false;
+        //   });
+
+        const test = data.filter(function (userValue){
+            if (typeof userValue.release_date.toLowerCase().includes(yearValue.toLowerCase()) === 'string') { 
+                return true;
+
+            }
+            else{
+                return false;
+            }
+
+        });
+
+           // const result = data.filter(function (userValue){
+        //     if (userValue.genres.includes(genreValue)){
+        //         return true}
+        //     else{
+        //         return false
+
+        //     }
+        //    });
+
+           // console.log(userValue)
+
+      
+
+    //    console.log(test);
+        console.log(typeof yearValue,typeof genreValue, typeof languagesValue)
+        
+        
+    }
+
+    
+
+
+
+    console.log(data.length)
+
+    btn.addEventListener("click",search);
 
 
 
 
 
 
-    console.log('working');
+    // console.log('working');
 })()
