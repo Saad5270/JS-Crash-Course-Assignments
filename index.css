@@ -53,3 +53,7 @@ button{
     font-size: 16px;
 
 }
+
+.movie-title>h2{
+    color: red;
+}
