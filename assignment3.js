@@ -20,39 +20,26 @@
         
         // const ratingsValue = ratings.value;
 
-        // const result = data.filter(function(userValue) {  
-        //     if (typeof userValue.genres === 'string') {    //|| typeof userValue.original_language
-        //       if (userValue.genres.toLowerCase().includes(genreValue.toLowerCase()) && userValue.release_date.includes(yearValue)
-        //       && userValue.original_language.toLowerCase().includes(languagesValue.toLowerCase())){
-        //         return true;
-        //       }
-        //     }
-        //     return false;
-        //   });
-
-        const test = data.filter(function (userValue){
-            if (typeof userValue.release_date.toLowerCase().includes(yearValue.toLowerCase()) === 'string') { 
+        const result = data.filter(function(userValue) {  
+            if (typeof userValue.genres === 'string') {    
+              if (userValue.genres.toLowerCase().includes(genreValue.toLowerCase()) && userValue.release_date.includes(yearValue)
+              && userValue.original_language.toLowerCase().includes(languagesValue.toLowerCase())){
                 return true;
-
+              }
             }
-            else{
-                return false;
-            }
+            return false;
+          });
 
-        });
-
-           // const result = data.filter(function (userValue){
-        //     if (userValue.genres.includes(genreValue)){
-        //         return true}
-        //     else{
-        //         return false
+        // const test = data.filter(function (userValue){
+        //     if (typeof userValue.release_date.toLowerCase().includes(yearValue.toLowerCase()) === 'string') { 
+        //         return true;
 
         //     }
-        //    });
+        //     else{
+        //         return false;
+        //     }
 
-           // console.log(userValue)
-
-      
+        // });
 
     //    console.log(test);
         console.log(typeof yearValue,typeof genreValue, typeof languagesValue)
@@ -60,18 +47,6 @@
         
     }
 
-    
-
-
-
-    console.log(data.length)
-
     btn.addEventListener("click",search);
 
-
-
-
-
-
-    // console.log('working');
 })()
